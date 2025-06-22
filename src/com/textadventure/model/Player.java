@@ -26,7 +26,15 @@ public class Player {
         if(item == null){
             throw new IllegalArgumentException("Cannot drop a null item from player inventory");
         }
-        boolean removed = this.inventory.remove(item);
-        return removed;
+        return this.inventory.remove(item);
+    }
+    public List<Item> getInventory(){
+        return this.inventory;
+    }
+    public String getCurrentRoomName(){
+        return this.currentRoomName;
+    }
+    public void setCurrentRoomName(String newRoomName){
+        this.currentRoomName = newRoomName.trim();
     }
 }
